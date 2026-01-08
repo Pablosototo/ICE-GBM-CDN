@@ -1,0 +1,236 @@
+.lfMn .lfAppFormArea {
+  font-family: "KolbiSans-Regular", "Montserrat-Regular", Arial, sans-serif !important;
+}
+.lfMn .ifFormBody {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.lfMn .form-page-area {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.lfMn .dijitInputContainer {
+  overflow: visible;
+}
+.lfMn .dijitTextBox {
+  border: none;
+  outline: none !important;
+  border: none !important;
+}
+.lfMn .freedomError {
+  margin-top: 0;
+}
+.lfMn .horizontal-line {
+  background: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid;
+}
+.lfMn .freedomInvalid {
+  margin-top: 0;
+}
+.lfMn .hint {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #048186;
+}
+.lfMn.lotusui .dijitCheckBox {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.lfMn.lotusui30dojo .freedom-form label {
+  font-weight: normal !important;
+}
+.lfMn.lotusui30dojo .freedom-form label {
+  font-size: 16px;
+  font-weight: 600;
+}
+.lfMn.lotusui30dojo .lfFormBtn.dijitButton {
+  padding: 6px 23px;
+  box-shadow: none;
+  background: #69328e;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 400;
+  border-radius: 18px;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  -ms-border-radius: 18px;
+  -o-border-radius: 18px;
+}
+.lfMn.lotusui30dojo .lfFormBtn.dijitButton:hover {
+  background-color: #5e2d7f;
+}
+.lfMn.lotusui30dojo .lfFormBtn.dijitButton:active {
+  background-color: #50266c;
+}
+.lfMn.lotusui30dojo .lfFormActionCancelBtn {
+  background: #fff !important;
+  border: 1px solid #69328e !important;
+  color: #69328e !important;
+}
+.lfMn.lotusui30dojo .lfFormActionCancelBtn:hover {
+  background: #fff !important;
+  border: 1px solid #69328e !important;
+  color: #69328e !important;
+}
+.lfMn.lotusui30dojo .lfFormActionCancelBtn:active {
+  background: #fff !important;
+  border: 1px solid #69328e !important;
+  color: #69328e !important;
+}
+.lfMn.lotusui30dojo .dijitValidationTextBox .dijitTextBox {
+  background-clip: padding-box;
+  line-height: 1.5;
+  font-size: 16px;
+  padding: 6px 12px;
+  border: 1px solid #4b4b4b !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+  -webkit-transition: border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out !important;
+  -moz-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+  -ms-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+  -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.lfMn.lotusui30dojo .dijitValidationTextBox .dijitTextBox:focus {
+  box-shadow: 0 0 0 0.25rem rgba(121, 255, 147, 0.2509803922) !important;
+  border-color: #4b4b4b !important;
+  outline: 0;
+  color: #212529;
+}
+.lfMn.lotusui30dojo .dijitValidationTextBox .dijitInputInner {
+  background-clip: padding-box;
+  line-height: 1.5;
+  font-size: 16px;
+  padding: 6px 12px;
+  border: 1px solid #dee2e6 !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+  -webkit-transition: border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out !important;
+  -moz-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+  -ms-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+  -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.lfMn.lotusui30dojo .dijitValidationTextBox .dijitInputInner:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+  border-color: #86b7fe !important;
+  outline: 0;
+  color: #212529;
+}
+.lfMn .grid-layout-table .grid-layout-cell > .lfFormField {
+  height: fit-content;
+  overflow: visible;
+  margin-bottom: 15px;
+}
+.lfMn
+  .grid-layout-table
+  .grid-layout-cell
+  > .lfFormField
+  .form-field-title-sign-css {
+  width: fit-content;
+}
+.lfMn
+  .grid-layout-table
+  .grid-layout-cell
+  > .lfFormField
+  .form-field-bottom-field-css {
+  width: 100%;
+  padding: 0;
+}
+.lfMn
+  span.freedom-base-mixin-css.dijitValidationTextBox.dijitComboBoxOpenOnClick {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.lfMn .lfFormFooter {
+  width: 100%;
+}
+.lfMn .lfFormFooter .actionButtons {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+}
+.lfMn .lfFormFooter .actionButtons .toolbar-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.lfMn .lfFormFooter .actionButtons .toolbar-list li {
+  display: flex;
+  width: 100%;
+}
+.lfMn .lfFormFooter .actionButtons .toolbar-list .lfFormBtn.dijitButton {
+  width: 100% !important;
+}
+html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 select {
+  padding: 6px 36px 6px 12px;
+  font-size: 1rem;
+  font-weight: 400;
+  border: 1px solid #4b4b4b;
+  width: 100%;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-transition: border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  -moz-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -ms-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(121, 255, 147, 0.2509803922);
+  border-color: #86b7fe;
+  outline: 0;
+  color: #212529;
+}
+@media (min-width: 200px) and (max-width: 470px) {
+  html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 select {
+    max-width: 95.8% !important;
+  }
+}
+@media (min-width: 471px) and (max-width: 991px) {
+  html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 select {
+    max-width: 94% !important;
+  }
+}
+@media (min-width: 992px) {
+  html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 select {
+    max-width: 93.5% !important;
+  }
+}
+html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 .lfFormBox {
+  width: 100%;
+  max-width: 710px !important;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 .lfFormBox a {
+  font-weight: 600;
+  font-size: 16px;
+  color: #207974;
+}
+html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 .lfFormBox a:hover {
+  color: #1c6b67;
+}
