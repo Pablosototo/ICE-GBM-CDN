@@ -33,3 +33,17 @@ El repositorio está diseñado para funcionar correctamente con servicios de CDN
 
 > ⚠️ Nota:  
 > Solo los archivos ubicados dentro de la carpeta `CDN/` deben ser considerados como recursos públicos listos para consumo vía CDN.
+
+### 🛠️ Custom Widgets (Google Recaptcha)
+
+Puedes consumir estos archivos directamente en tus aplicaciones:
+
+- **Hoja de Estilos (CSS):**
+  `https://cdn.jsdelivr.net/gh/Pablosototo/ICE-GBM-CDN@v1.0.0/hcl-leap/CDN/custom-widgets/google-recaptcha/RecaptchaWidget.css`
+- **Lógica (JavaScript):**
+  `https://cdn.jsdelivr.net/gh/Pablosototo/ICE-GBM-CDN@v1.0.0/hcl-leap/CDN/custom-widgets/google-recaptcha/RecaptchaWidget.js`
+
+### Temas CSS
+
+- **Kolbi:**
+  `https://cdn.jsdelivr.net/gh/Pablosototo/ICE-GBM-CDN@v1.0.0/hcl-leap/CDN/custom-themes/theme-kolbi.css`
