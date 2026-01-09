@@ -36,7 +36,7 @@ El repositorio está diseñado para funcionar correctamente con servicios de CDN
 
 ### 🛠️ Custom Widgets (Google Recaptcha)
 
-Puedes consumir estos archivos directamente en tus aplicaciones:
+Estas son las urls para consumir directamente los recursos mas importantes en LEAP:
 
 - **Hoja de Estilos (CSS):**
   `https://cdn.jsdelivr.net/gh/Pablosototo/ICE-GBM-CDN@v1.0.0/hcl-leap/CDN/custom-widgets/google-recaptcha/RecaptchaWidget.css`
