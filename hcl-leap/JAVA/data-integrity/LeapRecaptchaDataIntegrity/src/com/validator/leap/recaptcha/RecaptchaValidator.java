@@ -18,7 +18,7 @@ import com.ibm.form.nitro.service.data.integrity.IMetaData;
 
 public class RecaptchaValidator implements IDataIntegrityService {
 
-    private static final String RECAPTCHA_SECRET = "6Ld6dUUsAAAAAHHJeJvP1gLhHscIIiMd0ymE9Jzh";
+    private static final String RECAPTCHA_SECRET = "";
 
     private static final String VERIFY_URL =
             "https://www.google.com/recaptcha/api/siteverify";
