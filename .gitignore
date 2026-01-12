@@ -1,0 +1,25 @@
+# --- Directorios de compilación y salida ---
+bin/
+out/
+target/
+*.class
+
+# --- Archivos temporales de Eclipse ---
+.metadata/
+.recommenders/
+RemoteSystemsTempFiles/
+*.tmp
+*.bak
+*.swp
+local.properties
+
+# --- OSGi y dependencias específicas ---
+# Ignorar el jar generado si se crea dentro del proyecto
+*.jar
+
+
+# --- Archivos de sistema ---
+.DS_Store
+Thumbs.db
+
+.settings/
