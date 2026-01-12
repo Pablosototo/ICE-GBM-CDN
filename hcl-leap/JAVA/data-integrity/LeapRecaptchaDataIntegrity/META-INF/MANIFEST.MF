@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Recaptcha Validator
+Bundle-SymbolicName: com.validator.leap.recaptcha
+Bundle-Version: 1.0.0.0
+Bundle-Vendor: Validator
+Bundle-ClassPath: .
+Import-Package: com.ibm.form.nitro.service.data.integrity
+Service-Component: OSGI-INF/*.xml
+Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: com.validator.leap.recaptcha
