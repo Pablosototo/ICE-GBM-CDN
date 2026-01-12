@@ -27,120 +27,120 @@ const recaptchaWidgetDefinition = {
   ],
 
   instantiate: function (context, domNode, initialProps, eventManager) {
-    const widgetId =
-      "recaptcha_" +
-      (context.dataId || Math.random().toString(36).substr(2, 9));
+    // 1. LIMPIEZA PREVENTIVA: Borra cualquier rastro de una instanciación previa
+    // Esto evita que aparezcan dos recuadros al cambiar entre Diseño y Vista Previa.
+    domNode.innerHTML = "";
+
+    // 2. GENERACIÓN DE ID ÚNICO
+    // Usamos el ID interno de Leap si existe, de lo contrario un random.
+    const uniqueId = context.dataId || Math.random().toString(36).substr(2, 9);
+    const widgetId = "recaptcha_" + uniqueId;
 
     let token = "";
     let errorFn = null;
-    let container = null;
 
-    // CONTENEDOR PRINCIPAL
-    container = document.createElement("div");
+    // 3. CREACIÓN DE ELEMENTOS DEL DOM
+    const container = document.createElement("div");
     container.id = widgetId;
+    container.className = "recaptcha-container";
     domNode.appendChild(container);
 
-    // INPUT OCULTO (VALOR REAL PARA LEAP)
     const hiddenInput = document.createElement("input");
     hiddenInput.type = "hidden";
     hiddenInput.id = widgetId + "_hidden";
-    hiddenInput.value = "";
     hiddenInput.style.display = "none";
     domNode.appendChild(hiddenInput);
 
-    // ----------------------------
-    // RENDER DEL RECAPTCHA
-    // ----------------------------
+    // 4. LÓGICA DE RENDERIZADO
     function renderRecaptcha(attempt = 0) {
-      const MAX_ATTEMPTS = 10;
+      const MAX_ATTEMPTS = 15;
       const DELAY = 500;
 
+      // Si el objeto grecaptcha no está listo, reintentamos
       if (!window.grecaptcha || !window.grecaptcha.render) {
         if (attempt < MAX_ATTEMPTS) {
           setTimeout(() => renderRecaptcha(attempt + 1), DELAY);
+        } else {
+          console.error(
+            "[RecaptchaWidget] No se pudo cargar la API de Google."
+          );
         }
+        return;
+      }
+
+      // Si el contenedor ya tiene contenido (el iframe de Google), no renderizamos de nuevo
+      if (container.hasChildNodes()) {
         return;
       }
 
       try {
         window.grecaptcha.render(widgetId, {
           sitekey: initialProps.siteKey,
-
           callback: function (responseToken) {
             token = responseToken;
             hiddenInput.value = token;
-
-            if (errorFn) errorFn(null);
+            if (errorFn) errorFn(null); // Limpiar mensaje de error
             eventManager.sendEvent("onChange");
           },
-
           "expired-callback": function () {
             token = "";
             hiddenInput.value = "";
-
-            if (errorFn) {
-              errorFn("El reCAPTCHA expiró, por favor vuelve a verificar");
-            }
-
+            if (errorFn)
+              errorFn(
+                "El reCAPTCHA ha expirado. Por favor, verifica de nuevo."
+              );
             eventManager.sendEvent("onChange");
           },
-
           "error-callback": function () {
             token = "";
             hiddenInput.value = "";
-
-            if (errorFn) {
-              errorFn("Ocurrió un error al cargar el reCAPTCHA");
-            }
-
+            if (errorFn) errorFn("Error de conexión con Google reCAPTCHA.");
             eventManager.sendEvent("onChange");
           },
         });
       } catch (e) {
-        console.error("[RecaptchaWidget] Error renderizando:", e);
+        // Capturamos el error silenciosamente si es por re-renderizado
+        console.warn("[RecaptchaWidget] Info:", e.message);
       }
     }
 
-    // ----------------------------
-    // CARGA DEL SCRIPT DE GOOGLE
-    // ----------------------------
-    const existingScript = document.querySelector(
-      "script[src*='recaptcha/api.js']"
-    );
+    // 5. CARGA DINÁMICA DEL SCRIPT DE GOOGLE (Singleton)
+    const SCRIPT_ID = "google-recaptcha-api-script";
+    let scriptTag = document.getElementById(SCRIPT_ID);
 
-    if (!existingScript) {
-      const script = document.createElement("script");
-      script.src = "https://www.google.com/recaptcha/api.js";
-      script.async = true;
-      script.defer = true;
-      script.onload = renderRecaptcha;
-      document.head.appendChild(script);
+    if (!scriptTag) {
+      scriptTag = document.createElement("script");
+      scriptTag.id = SCRIPT_ID;
+      scriptTag.src = "https://www.google.com/recaptcha/api.js?render=explicit";
+      scriptTag.async = true;
+      scriptTag.defer = true;
+      scriptTag.onload = renderRecaptcha;
+      document.head.appendChild(scriptTag);
     } else {
+      // Si el script ya existe, simplemente intentamos renderizar
       renderRecaptcha();
     }
 
-    // ----------------------------
-    // API DEL WIDGET PARA LEAP
-    // ----------------------------
+    // 6. INTERFAZ PÚBLICA DEL WIDGET (API de Leap)
     return {
       getValue: () => {
         return hiddenInput.value;
       },
 
       setValue: (val) => {
+        // reCAPTCHA no permite setear un token manualmente por seguridad,
+        // pero mantenemos el valor interno sincronizado.
         token = val || "";
         hiddenInput.value = token;
       },
 
       validateValue: () => {
         const val = hiddenInput.value;
-
         if (initialProps.required && (!val || val.trim() === "")) {
-          const msg = "Por favor completa el reCAPTCHA";
+          const msg = "Por favor, completa la verificación anti-bots.";
           if (errorFn) errorFn(msg);
           return msg;
         }
-
         if (errorFn) errorFn(null);
         return null;
       },
@@ -148,16 +148,9 @@ const recaptchaWidgetDefinition = {
       setProperty: (propName, propValue) => {
         if (propName === "siteKey") {
           initialProps.siteKey = propValue;
-          token = "";
-          hiddenInput.value = "";
-
-          if (window.grecaptcha) {
-            try {
-              window.grecaptcha.reset();
-              renderRecaptcha();
-            } catch (e) {
-              console.warn("No se pudo resetear reCAPTCHA:", e);
-            }
+          // Si cambia la clave en tiempo de ejecución, reseteamos
+          if (window.grecaptcha && window.grecaptcha.reset) {
+            window.grecaptcha.reset();
           }
         }
       },
@@ -173,4 +166,5 @@ const recaptchaWidgetDefinition = {
   },
 };
 
+// Registro del widget en el framework de Leap (Nitro)
 nitro.registerWidget(recaptchaWidgetDefinition);
