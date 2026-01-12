@@ -1,10 +1,16 @@
 # --- Directorios de compilación y salida ---
-bin/
-out/
-target/
+# Ignoramos bin y target en cualquier profundidad
+**/bin/
+**/target/
+**/out/
 *.class
 
-# --- Archivos temporales de Eclipse ---
+# --- Dependencias pesadas de HCL LEAP ---
+# Esto ignora la carpeta específica que mencionaste antes
+hcl-leap/JAVA/data-integrity/LeapRecaptchaDataIntegrity/dependencies/
+*.jar
+
+# --- Archivos temporales y de configuración de Eclipse ---
 .metadata/
 .recommenders/
 RemoteSystemsTempFiles/
@@ -13,13 +19,9 @@ RemoteSystemsTempFiles/
 *.swp
 local.properties
 
-# --- OSGi y dependencias específicas ---
-# Ignorar el jar generado si se crea dentro del proyecto
-*.jar
-
+# Ignorar ajustes de usuario de Eclipse en el proyecto
+hcl-leap/JAVA/data-integrity/LeapRecaptchaDataIntegrity/.settings/
 
 # --- Archivos de sistema ---
 .DS_Store
 Thumbs.db
-
-.settings/
