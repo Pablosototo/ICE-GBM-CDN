@@ -1,4 +1,4 @@
-# ICE-GBM-CDN
+ ICE-GBM-CDN
 
 Este repositorio tiene como finalidad compartir **recursos públicos vía CDN** con el equipo de desarrollo del ICE y el equipo de desarrollo de GBM, enfocados en soluciones construidas sobre **:contentReference[oaicite:0]{index=0}**.
 
