@@ -1,3 +1,6 @@
+.lfMn #F_Formulario1-P_FormularioServicios-F_HorizontalLine1 {
+  width: 90%;
+}
 .lfMn .lfAppFormArea {
   font-family: "KolbiSans-Regular", "Montserrat-Regular", Arial, sans-serif !important;
 }
@@ -17,6 +20,7 @@
   border: none;
   outline: none !important;
   border: none !important;
+  box-sizing: border-box !important;
 }
 .lfMn .freedomError {
   margin-top: 0;
@@ -32,6 +36,32 @@
   margin-top: 6px;
   font-size: 14px;
   color: #048186;
+}
+.lfMn .grid-layout {
+  overflow: visible;
+}
+.lfMn .grid-layout-table .grid-layout-cell {
+  padding: 5px 0;
+}
+.lfMn .grid-layout-table .grid-layout-cell > .lfFormField {
+  height: fit-content;
+  overflow: visible;
+  margin-bottom: 15px;
+}
+.lfMn
+  .grid-layout-table
+  .grid-layout-cell
+  > .lfFormField
+  .form-field-title-sign-css {
+  width: fit-content;
+}
+.lfMn
+  .grid-layout-table
+  .grid-layout-cell
+  > .lfFormField
+  .form-field-bottom-field-css {
+  width: 100%;
+  padding: 0;
 }
 .lfMn.lotusui .dijitCheckBox {
   width: 16px;
@@ -87,6 +117,7 @@
   color: #69328e !important;
 }
 .lfMn.lotusui30dojo .dijitValidationTextBox .dijitTextBox {
+  box-sizing: border-box !important;
   background-clip: padding-box;
   line-height: 1.5;
   font-size: 16px;
@@ -134,26 +165,6 @@
   outline: 0;
   color: #212529;
 }
-.lfMn .grid-layout-table .grid-layout-cell > .lfFormField {
-  height: fit-content;
-  overflow: visible;
-  margin-bottom: 15px;
-}
-.lfMn
-  .grid-layout-table
-  .grid-layout-cell
-  > .lfFormField
-  .form-field-title-sign-css {
-  width: fit-content;
-}
-.lfMn
-  .grid-layout-table
-  .grid-layout-cell
-  > .lfFormField
-  .form-field-bottom-field-css {
-  width: 100%;
-  padding: 0;
-}
 .lfMn
   span.freedom-base-mixin-css.dijitValidationTextBox.dijitComboBoxOpenOnClick {
   display: flex;
@@ -162,14 +173,16 @@
 }
 .lfMn .lfFormFooter {
   width: 100%;
+  padding: 10px 5px;
 }
 .lfMn .lfFormFooter .actionButtons {
   display: flex;
-  justify-content: center;
-  width: 95%;
+  justify-content: flex-start;
+  width: 89%;
+  padding: 0 !important;
 }
 .lfMn .lfFormFooter .actionButtons .toolbar-list {
-  width: 100%;
+  width: 100% !important;
   display: flex;
   justify-content: center;
   gap: 12px;
@@ -186,7 +199,7 @@ html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 select {
   font-size: 1rem;
   font-weight: 400;
   border: 1px solid #4b4b4b;
-  width: 100%;
+  width: 90%;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -204,21 +217,6 @@ html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 select:focus {
   border-color: #86b7fe;
   outline: 0;
   color: #212529;
-}
-@media (min-width: 200px) and (max-width: 470px) {
-  html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 select {
-    max-width: 95.8% !important;
-  }
-}
-@media (min-width: 471px) and (max-width: 991px) {
-  html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 select {
-    max-width: 94% !important;
-  }
-}
-@media (min-width: 992px) {
-  html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 select {
-    max-width: 93.5% !important;
-  }
 }
 html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 .lfFormBox {
   width: 100%;
