@@ -181,7 +181,7 @@
 .lfMn .lfFormFooter .actionButtons {
   display: flex;
   justify-content: flex-start;
-  width: 93.5%;
+  width: 89%;
   padding: 0 !important;
 }
 .lfMn .lfFormFooter .actionButtons .toolbar-list {
