@@ -15,6 +15,7 @@
 .lfMn .form-page-area {
   width: 100% !important;
   max-width: 100% !important;
+  overflow: hidden !important;
 }
 .lfMn .dijitInputContainer {
   overflow: visible;
@@ -203,6 +204,7 @@ html:not(.dj_ie) body:not(.dj_a11y) .lfMn.lotusui30 select {
   font-weight: 400;
   border: 1px solid #4b4b4b;
   width: 90%;
+  max-width: 90%;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
