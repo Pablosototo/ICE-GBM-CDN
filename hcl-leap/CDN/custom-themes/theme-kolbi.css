@@ -1,4 +1,7 @@
-.lfMn #F_Formulario1-P_FormularioServicios-F_HorizontalLine1 {
+.lfMn .form-button-box-wrapper {
+  padding: 0 !important;
+}
+.lfMn div#F_Formulario1-P_FormularioServicios-F_HorizontalLine1 {
   width: 90%;
 }
 .lfMn .lfAppFormArea {
@@ -178,7 +181,7 @@
 .lfMn .lfFormFooter .actionButtons {
   display: flex;
   justify-content: flex-start;
-  width: 89%;
+  width: 93.5%;
   padding: 0 !important;
 }
 .lfMn .lfFormFooter .actionButtons .toolbar-list {
