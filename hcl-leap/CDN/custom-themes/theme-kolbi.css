@@ -1,7 +1,7 @@
 .lfMn .form-button-box-wrapper {
   padding: 0 !important;
 }
-.lfMn div#F_Formulario1-P_FormularioServicios-F_HorizontalLine1 {
+.lfMn .horizontal-line {
   width: 90%;
 }
 .lfMn .lfAppFormArea {
@@ -13,9 +13,9 @@
   justify-content: center;
 }
 .lfMn .form-page-area {
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow: hidden !important;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 .lfMn .dijitInputContainer {
   overflow: visible;
