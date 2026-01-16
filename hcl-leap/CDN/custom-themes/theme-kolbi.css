@@ -16,9 +16,9 @@
   justify-content: center;
 }
 .lfMn .form-page-area {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
 }
 .lfMn .dijitInputContainer {
   overflow: visible;
