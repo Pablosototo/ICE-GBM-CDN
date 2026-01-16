@@ -1,3 +1,6 @@
+.lfMn button#freedom_widget_solution_form_FreedomDate_0-iconNode {
+  padding-right: 27px;
+}
 .lfMn .form-button-box-wrapper {
   padding: 0 !important;
 }
@@ -51,6 +54,14 @@
   height: fit-content;
   overflow: visible;
   margin-bottom: 15px;
+}
+.lfMn .grid-layout-table .grid-layout-cell > .lfFormField.lfFormFieldSection {
+  width: 90%;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 .lfMn
   .grid-layout-table
